@@ -26,6 +26,19 @@ var validator = {
         }
     },
 
+    findFormatErrors: function(user) {
+        var errorMessages = [];
+        for(var key in user) {
+            // if(user.hasOwnProperty(key)) {
+                if(!validator.isFieldValid(key,user[key]))
+                    errorMessages.push(validator.form[key].errorMessage);
+            // }
+        }
+        errorMessages.length > 0 ? new Error(errorMessages.join('<br />')):null;
+
+    },
+
+
     isUsernameValid: function(username) {
         return this.form.username.status = /^[a-zA-Z][a-zA-Z0-9_]{5,17}$/.test(username);
     },

@@ -31,6 +31,24 @@ block content
             .space{
             height:30px;    
             }
+            .button {
+            width:142px;
+            height:30px;
+            font-weight: bold;
+            color: #09161f;
+            margin:0 auto;
+            margin-top:50px;
+            text-align:center;
+            border:1px solid #ffffff;
+            border-radius: 6px;
+            color: aliceblue;
+            }
+            .button:hover{
+            cursor: pointer;
+            background-color: whitesmoke;
+            color:black;
+            }
+            
         title 详情
 
     body
@@ -48,3 +66,8 @@ block content
 
             p 邮箱: 
                 span #{user.email}                                    
+            
+            div.button
+                div#signout 退出
+    
+    script(type='text/javascript', src='./javascripts/detail.js')

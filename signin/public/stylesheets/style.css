@@ -33,12 +33,14 @@ input.button {
     width:142px;
     font-weight: bold;
     float: left;
-    color: #09161f;
+    color: #ffffff;
 }
 
 input.button:hover{
     cursor: pointer;
     background-color: whitesmoke;
+    color: #09161f;
+
 }
 
 input{
@@ -70,4 +72,40 @@ input{
     font: 8px 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;
     margin-top: 7px;
     display: block;
+}
+
+#signup {
+    width:290px;
+    font-weight: bold;
+    color: #09161f;
+    margin:0 auto;
+    margin-left: 6px;
+    margin-top:50px;
+    text-align:center;
+    border:1px solid #ffffff;
+    border-radius: 6px;
+    color: aliceblue;
+}
+#signup:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+    color:black;
+}
+
+#signin {
+    width:290px;
+    font-weight: bold;
+    color: #09161f;
+    margin:0 auto;
+    margin-left: 6px;
+    margin-top:40px;
+    text-align:center;
+    border:1px solid #ffffff;
+    border-radius: 6px;
+    color: aliceblue;
+}
+#signin:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+    color:black;
 }

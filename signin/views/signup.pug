@@ -4,14 +4,15 @@ block content
 
     h1 注册用户
     form(method = 'post')
-        if error
-            div.error!=error
         div.signup-container
             div.username
                 label(for='username') 用户名
                 input(id='username' name='username' value=user.username)
                 div.error_display
-                    span.error
+                    if(error.username)
+                        span.error #{error.username}
+                    else
+                        span.error
 
             div.password
                 label(for='password')  密码
@@ -29,23 +30,34 @@ block content
                 label(for='sid')  学号
                 input(id='sid' name='sid' value=user.sid)
                 div.error_display
-                    span.error
+                    if(error.sid)
+                        span.error #{error.sid}
+                    else
+                        span.error
 
             div.phone
                 label(for='phone')  电话
                 input(id='phone' name='phone' value=user.phone)
                 div.error_display
-                    span.error
+                    if(error.phone)
+                        span.error #{error.phone}
+                    else
+                        span.error
 
             div.email
                 label(for='email')  邮箱
                 input(id='email' name='email' value=user.email)
                 div.error_display
-                    span.error
+                    if(error.email)
+                        span.error #{error.email}
+                    else
+                        span.error
 
             div.buttons
                 input.button.reset(type = 'reset' value = '重置')
                 input.button.submit(type = 'submit' value = '提交')
+            div#signin 登录
+
     
     //- link(rel='stylesheet' href='stylesheets/style.css')
     script(type="text/javascript" src="javascripts/validator.js")

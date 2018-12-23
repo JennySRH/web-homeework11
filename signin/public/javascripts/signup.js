@@ -1,4 +1,7 @@
 $(function(){
+    $('#signup').click(function() {
+        window.location.href = '/signup'
+    })
     $('input:not(.button)').blur(function(){
         if(validator.isFieldValid(this.id,$(this).val())) {
             $(this).parent().find('.error').text('').hide();
