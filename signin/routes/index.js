@@ -31,7 +31,6 @@ router.post('/signin', function(req, res, next) {
 	console.log("in post signin");
 	userManager.findUser(req.body.username, req.body.password)
 		.then(function(user) {
-			console.log(user);
 			req.session.user = user;
 			console.log("in post signin then");
 			res.redirect('/detail');
@@ -89,9 +88,11 @@ router.post('/regist', function(req, res, next) {
 		.catch(function(error){});
 });
 
+
+// 判断用户试图通过http://localhost:8000?username=ab的访问权限
 router.all('*', function(req, res, next) {
 	if (req.session.user && req.query.username) {
-		req.session.err = req.query.username != req.session.user.username ? 1 : 0;
+		req.session.err = (req.query.username != req.session.user.username ? 1 : 0);
 		res.redirect('/detail');
 	}
 	else if (req.session.user) {

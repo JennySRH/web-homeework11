@@ -48,6 +48,10 @@ block content
             background-color: whitesmoke;
             color:black;
             }
+            #errordata {
+            color:red;
+            text-align:center;
+            }
             
         title 详情
 
@@ -69,5 +73,12 @@ block content
             
             div.button
                 div#signout 退出
+
+            if(error==1)
+                span#errordata 只能够访问自己的数据
+                alert('只能够访问自己的数据')
+            else 
+                span#errordata
+
     
     script(type='text/javascript', src='./javascripts/detail.js')
